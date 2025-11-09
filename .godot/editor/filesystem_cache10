@@ -1,0 +1,15 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1762719581
+::res://assets/::1762719427
+blocks.png::CompressedTexture2D::1643787284528577797::1762719427::1762719582::1::::<><><>0<>0<>180c199c0331fba1e1f723641efacbda<>res://.godot/imported/blocks.png-685c13156444a7a1452ea08f4bf9c1af.ctex::
+duck.png::CompressedTexture2D::5232587687878863138::1762719427::1762719582::1::::<><><>0<>0<>f8e4c692c1aadf3c39be6ebc9513788a<>res://.godot/imported/duck.png-dfd3b3c3c9ea2a599d47c99de25bbd65.ctex::
+potato.png::CompressedTexture2D::6723789741050879128::1762719427::1762719582::1::::<><><>0<>0<>30ddd3552a32d3bda332f5e32d95f945<>res://.godot/imported/potato.png-1e83fca169fd45bea467b0d3de9f2753.ctex::
+potatolegless.png::CompressedTexture2D::5922143844642238868::1762719427::1762719582::1::::<><><>0<>0<>a236a7c147659ea8c248d12a9bf0b4d6<>res://.godot/imported/potatolegless.png-4b410f28bc417cc63666c37b369ef7f9.ctex::
+::res://scenes/::1762719427
+bell.tscn::PackedScene::4140600796562122691::1762719427::0::1::::<><><>0<>0<><>::uid://bku23l6yvxeqs::::res://scripts/bell.gd
+over_water.tscn::PackedScene::8001543139355086796::1762719427::0::1::::<><><>0<>0<><>::uid://lukxa3lysi86::::res://scenes/player.tscn<>uid://xoi63q5hsltt::::res://assets/blocks.png<>uid://by80dcibpt3i2::::res://scenes/bell.tscn
+player.tscn::PackedScene::814013122074132241::1762719427::0::1::::<><><>0<>0<><>::uid://cnsvd11o716xy::::res://scripts/player.gd<>uid://c22b3m5fdomua::::res://assets/potato.png<>uid://cqmy3xscgqqbs::::res://assets/potatolegless.png
+under_water.tscn::PackedScene::3000181786511012105::1762719427::0::1::::<><><>0<>0<><>::uid://xoi63q5hsltt::::res://assets/blocks.png<>uid://lukxa3lysi86::::res://scenes/player.tscn
+::res://scripts/::1762719427
+bell.gd::GDScript::3131286662953862922::1762719427::0::1::::<>Node2D<><>0<>0<><>::
+player.gd::GDScript::5723736954935445298::1762719427::0::1::::<>CharacterBody2D<><>0<>0<><>::
