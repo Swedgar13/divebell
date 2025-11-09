@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=4 uid="uid://dmaaim6cgdjbo"]
+
+[ext_resource type="PackedScene" uid="uid://lukxa3lysi86" path="res://scenes/player.tscn" id="1_t484l"]
+[ext_resource type="Texture2D" uid="uid://xoi63q5hsltt" path="res://assets/blocks.png" id="2_ubnj7"]
+[ext_resource type="PackedScene" uid="uid://by80dcibpt3i2" path="res://scenes/bell.tscn" id="3_ubnj7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t484l"]
+texture = ExtResource("2_ubnj7")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f3sb7"]
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = ""
+custom_data_layer_0/type = 0
+sources/1 = SubResource("TileSetAtlasSource_t484l")
+
+[node name="Over Water" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -1
+position = Vector2(194, 92)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAD9/wAAAQAAAAEAAAD9////AQAAAAEAAAD+////AQAAAAEAAAD/////AQAAAAEAAAD//wAAAQAAAAEAAAD+/wAAAQAAAAEAAAD+//7/AQAAAAEAAAD///7/AQAAAAEAAAAAAP//AQAAAAEAAAAAAAAAAQAAAAEAAAD///3/AQAAAAEAAAD+//3/AQAAAAEAAAAAAP7/AQAAAAEAAAAAAP3/AQAAAAEAAAD///z/AQAAAAEAAAABAP//AQAAAAEAAAABAAAAAQAAAAEAAAACAAAAAQABAAAAAAACAP//AQABAAAAAAACAP7/AQABAAAAAAABAP7/AQABAAAAAAABAP3/AQABAAAAAAABAPz/AQABAAAAAAAAAPz/AQAAAAEAAAAAAPv/AQABAAAAAAD///v/AQABAAAAAAD+//v/AQABAAAAAAD+//z/AQAAAAEAAAD9//z/AQABAAAAAAD9//3/AQABAAAAAAD9//7/AQABAAAAAAD8//7/AQABAAAAAAD8////AQABAAAAAAD8/wAAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_f3sb7")
+
+[node name="Player" parent="." instance=ExtResource("1_t484l")]
+position = Vector2(499, 296)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+
+[node name="bell" parent="." instance=ExtResource("3_ubnj7")]
+position = Vector2(95.99994, 16.999878)
+scale = Vector2(10, 10)
+destination = "res://scenes/under_water.tscn"

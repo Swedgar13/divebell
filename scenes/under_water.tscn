@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=4 uid="uid://bi0ks5m57fwcf"]
+
+[ext_resource type="Texture2D" uid="uid://xoi63q5hsltt" path="res://assets/blocks.png" id="1_8r6i5"]
+[ext_resource type="PackedScene" uid="uid://lukxa3lysi86" path="res://scenes/player.tscn" id="2_fsn5y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fsn5y"]
+texture = ExtResource("1_8r6i5")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3yd1l"]
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = ""
+custom_data_layer_0/type = 0
+sources/1 = SubResource("TileSetAtlasSource_fsn5y")
+
+[node name="Under Water" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -1
+position = Vector2(194, 92)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAD6////AQABAAAAAAD6//7/AQABAAAAAAD6//3/AQABAAAAAAD7//3/AQABAAAAAAD7//z/AQABAAAAAAD7//v/AQABAAAAAAD8//r/AQABAAAAAAD9//r/AQABAAAAAAD+//r/AQABAAAAAAD///v/AQABAAAAAAD///z/AQABAAAAAAD///3/AQABAAAAAAAAAP3/AQABAAAAAAAAAP7/AQABAAAAAAAAAP//AQABAAAAAAD7////AQAAAAEAAAD8////AQAAAAEAAAD9////AQAAAAEAAAD+////AQAAAAEAAAD/////AQAAAAEAAAD///7/AQAAAAEAAAD+//7/AQAAAAEAAAD9//7/AQAAAAEAAAD8//7/AQAAAAEAAAD7//7/AQAAAAEAAAD8//3/AQAAAAEAAAD9//3/AQAAAAEAAAD+//3/AQAAAAEAAAD+//z/AQAAAAEAAAD9//z/AQAAAAEAAAD9//v/AQAAAAEAAAD8//v/AQAAAAEAAAD8//z/AQAAAAEAAAD+//v/AQAAAAEAAAA=")
+tile_set = SubResource("TileSet_3yd1l")
+
+[node name="Player" parent="." instance=ExtResource("2_fsn5y")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true

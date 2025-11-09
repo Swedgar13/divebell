@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://by80dcibpt3i2"]
+
+[ext_resource type="Script" uid="uid://bku23l6yvxeqs" path="res://scripts/bell.gd" id="1_fribj"]
+
+[node name="bell" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_fribj")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 10.333334
+offset_bottom = 10.666666
+scale = Vector2(1.2110801, 1.2110801)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
