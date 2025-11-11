@@ -89,7 +89,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 6.0
+"speed": 10.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -103,5 +103,6 @@ shape = SubResource("CircleShape2D_g2els")
 position = Vector2(0, -22)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_3vyb7")
-animation = &"idle"
-frame_progress = 0.10618037
+animation = &"walk"
+frame = 2
+frame_progress = 0.83865166

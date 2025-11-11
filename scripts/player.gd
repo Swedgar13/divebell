@@ -28,7 +28,6 @@ func if_grounded():
 	rotation = 0
 	sprite_2d.flip_v = false
 	var direction := Input.get_axis("grounded_left", "grounded_right")
-	print(direction)
 	if direction:
 		velocity.x = direction * walk_speed
 	else:
