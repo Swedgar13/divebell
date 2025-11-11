@@ -33,11 +33,18 @@ func if_grounded():
 		velocity.x = direction * walk_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, walk_speed)
+	if direction == 0:
+		sprite_2d.play("idle")
+	elif direction < 0:
+		sprite_2d.flip_h = true
+	else:
+		sprite_2d.flip_h = false
 	if not is_on_floor():
 		velocity += get_gravity() * get_process_delta_time()
 	else:
 		if Input.is_action_just_pressed("swim"):
 			velocity.y = jump_power
+	
 	move_and_slide()
 
 #is the function that works for swimming movement
