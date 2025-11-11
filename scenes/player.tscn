@@ -1,12 +1,28 @@
-[gd_scene load_steps=12 format=3 uid="uid://lukxa3lysi86"]
+[gd_scene load_steps=16 format=3 uid="uid://lukxa3lysi86"]
 
 [ext_resource type="Script" uid="uid://cnsvd11o716xy" path="res://scripts/player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://bv75mk16y4bxg" path="res://assets/duck/idle.png" id="2_dqkch"]
-[ext_resource type="Texture2D" uid="uid://cqmy3xscgqqbs" path="res://assets/potatolegless.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://dr7jacg74qebk" path="res://assets/duck/duck_idle.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://bv75mk16y4bxg" path="res://assets/duck/idle.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://diwejtkble5qk" path="res://assets/duck/duck_walk.png" id="3_qhqgy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 7.017834
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("3_qhqgy")
@@ -32,15 +48,24 @@ region = Rect2(32, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dqkch")
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qhqgy")
+"texture": ExtResource("3_dqkch")
 }],
 "loop": true,
 "name": &"swim",
@@ -64,7 +89,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 10.0
+"speed": 6.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -78,5 +103,5 @@ shape = SubResource("CircleShape2D_g2els")
 position = Vector2(0, -22)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_3vyb7")
-animation = &"walk"
-autoplay = "walk"
+animation = &"idle"
+frame_progress = 0.10618037

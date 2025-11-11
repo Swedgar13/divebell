@@ -25,10 +25,10 @@ func _physics_process(_delta: float) -> void:
 
 #is the function that works for left to right movement
 func if_grounded():
-	sprite_2d.play("walk")
 	rotation = 0
 	sprite_2d.flip_v = false
 	var direction := Input.get_axis("grounded_left", "grounded_right")
+	print(direction)
 	if direction:
 		velocity.x = direction * walk_speed
 	else:
@@ -37,8 +37,10 @@ func if_grounded():
 		sprite_2d.play("idle")
 	elif direction < 0:
 		sprite_2d.flip_h = true
+		sprite_2d.play("walk")
 	else:
 		sprite_2d.flip_h = false
+		sprite_2d.play("walk")
 	if not is_on_floor():
 		velocity += get_gravity() * get_process_delta_time() * 5
 	else:
