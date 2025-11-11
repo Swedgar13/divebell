@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 @export var walk_speed = 450.0
 @export var swim_speed = 7
-@export var jump_power = -650
+@export var jump_power = -900
 
 var is_swimming : bool = true
 
@@ -40,7 +40,7 @@ func if_grounded():
 	else:
 		sprite_2d.flip_h = false
 	if not is_on_floor():
-		velocity += get_gravity() * get_process_delta_time()
+		velocity += get_gravity() * get_process_delta_time() * 5
 	else:
 		if Input.is_action_just_pressed("swim"):
 			velocity.y = jump_power
