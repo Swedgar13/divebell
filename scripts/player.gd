@@ -1,5 +1,16 @@
 extends CharacterBody2D
 
+var in_water: bool = false
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	in_water = true
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	in_water = false 
+
+
+
+
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var player: CharacterBody2D = $"."
 
@@ -11,13 +22,19 @@ var is_swimming : bool = true
 
 
 func _physics_process(_delta: float) -> void:
-	
-	#checks the variable is_swimming and runs the apropriate movement function
+
+# update is_swimming based on whether we're in water and pressing swim
+	if Input.is_action_just_pressed("swim") and in_water:
+		is_swimming = true
+	elif not in_water:
+		is_swimming = false
+
+# now run the appropriate movement function
 	if is_swimming:
 		if_swimming()
 	else:
 		if_grounded()
-	
+
 	#changes the is_swimming var when test(space) button is pressed this is temporary
 	if Input.is_action_just_pressed("test"):
 		is_swimming = not is_swimming
@@ -60,7 +77,7 @@ func if_swimming():
 	#if the mouse isent to close makes player rotate towards mouse
 	if distance > 50:
 		look_at(mouse)
-	#if the mouse isent to close and swim(shift) button is pressed moves player towards mouse 
+	#if the mouse isnt to close and swim(shift) button is pressed moves player towards mouse 
 	if distance > 100 and Input.is_action_pressed("swim"):
 		player.move_local_x(swim_speed)
 	#else makes player stay still
